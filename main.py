@@ -1,11 +1,5 @@
 from env import *
 
-Symbol = str
-Number = (int, float)
-Atom = (Symbol, Number)
-List = list
-Exp = (Atom, List)
-
 global_env = stdenv()
 
 class Procedure(object):

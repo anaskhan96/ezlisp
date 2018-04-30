@@ -1,6 +1,12 @@
 import math
 import operator as op
 
+Symbol = str
+Number = (int, float)
+Atom = (Symbol, Number)
+List = list
+Exp = (Atom, List)
+
 class Env(dict):
 	def __init__(self, parms=(), args=(), outer=None):
 		self.update(zip(parms, args))
@@ -28,7 +34,7 @@ def stdenv():
         'length':  len, 
         'list':    lambda *x: List(x), 
         'list?':   lambda x: isinstance(x, List), 
-        'map':     map,
+        'map':     lambda x,y,z: list(map(x,y,z)),
         'max':     max,
         'min':     min,
         'not':     op.not_,
