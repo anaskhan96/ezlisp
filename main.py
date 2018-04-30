@@ -26,7 +26,8 @@ def stdenv():
 	env.update(vars(math))
 	env.update({
 		'+':op.add, '-':op.sub, '*':op.mul, '/':op.truediv, 
-        '>':op.gt, '<':op.lt, '>=':op.ge, '<=':op.le, '=':op.eq, 
+        '>':op.gt, '<':op.lt, '>=':op.ge, '<=':op.le, '=':op.eq,
+        'modulo':  op.mod,
         'abs':     abs,
         'append':  op.add,  
         'apply':   lambda proc, args: proc(*args),
@@ -86,6 +87,7 @@ def atomise(token):
 			return Symbol(token)
 
 def eval(x, env=global_env):
+	print(x)
 	if isinstance(x, Symbol): 
 		return env.find(x)[x]
 	elif not isinstance(x, List):
