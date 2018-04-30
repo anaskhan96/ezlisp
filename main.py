@@ -87,7 +87,6 @@ def atomise(token):
 			return Symbol(token)
 
 def eval(x, env=global_env):
-	print(x)
 	if isinstance(x, Symbol): 
 		return env.find(x)[x]
 	elif not isinstance(x, List):
@@ -98,7 +97,7 @@ def eval(x, env=global_env):
 	elif op == 'if':
 		(cond, conseq, alt) = args
 		exp = (conseq if eval(cond, env) else alt)
-		return eval(exp)
+		return eval(exp, env)
 	elif op == 'define':
 		(symbol, exp) = args
 		env[symbol] = eval(exp, env)
