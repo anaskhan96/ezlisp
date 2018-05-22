@@ -34,7 +34,7 @@ def stdenv():
         'length':  len, 
         'list':    lambda *x: List(x), 
         'list?':   lambda x: isinstance(x, List), 
-        'map':     lambda x,y,z: list(map(x,y,z)),
+        'map':     lambda x,y: list(map(x,y)),
         'max':     max,
         'min':     min,
         'not':     op.not_,
