@@ -65,6 +65,9 @@ def evaluate(x, env=global_env):
 		return proc(*vals)
 
 while True:
-	res = evaluate(parse(tokenize(input("ezlisp > "))))
+	src = input("ezlisp > ")
+	if src == 'exit':
+		exit(0)
+	res = evaluate(parse(tokenize(src)))
 	if res != None:
 		print(res)
