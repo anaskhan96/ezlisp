@@ -68,6 +68,8 @@ while True:
 	src = input("ezlisp > ")
 	if src == 'exit':
 		exit(0)
+	elif src.lstrip() == '':
+		continue
 	res = evaluate(parse(tokenize(src)))
 	if res != None:
 		print(res)
