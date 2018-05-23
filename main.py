@@ -70,6 +70,10 @@ while True:
 		exit(0)
 	elif src.lstrip() == '':
 		continue
-	res = evaluate(parse(tokenize(src)))
-	if res != None:
-		print(res)
+	res = ''
+	try:
+		res = evaluate(parse(tokenize(src)))
+		if res != None:
+			print(res)
+	except:
+		print("Error in syntax!")
