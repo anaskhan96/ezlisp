@@ -70,7 +70,6 @@ while True:
 		exit(0)
 	elif src.lstrip() == '':
 		continue
-	res = ''
 	try:
 		res = evaluate(parse(tokenize(src)))
 		if res != None:
