@@ -44,5 +44,7 @@ def stdenv():
         'procedure?': callable,
         'round':   round,
         'symbol?': lambda x: isinstance(x, Symbol),	
+        'print-line': lambda: print(),
+        'write-line': lambda x: print(x)
 	})
 	return env

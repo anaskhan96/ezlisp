@@ -44,7 +44,14 @@ def evaluate(x, env=global_env):
 	elif not isinstance(x, List):
 		return x   
 	op, *args = x
-	if op == 'quote':
+	if op == 'display':
+		l = env.find(args[0])[args[0]]
+		if type(l) == list:
+			for i in l:
+				print(i)
+		else:
+			print(l)
+	elif op == 'quote':
 		return args[0]
 	elif op == 'if':
 		(cond, conseq, alt) = args
