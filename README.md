@@ -12,3 +12,7 @@ git clone https://github.com/anaskhan96/ezlisp
 cd ezlisp
 python3 main.py
 ```
+
+---
+
+This project was built under the course *Compiler Design* in *PES University*.
